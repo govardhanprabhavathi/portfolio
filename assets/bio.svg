@@ -1,0 +1,19 @@
+<svg width="580" height="220" viewBox="0 0 580 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+    text { font-family: 'Inter', system-ui, sans-serif; }
+    .title { font-weight: 700; font-size: 24px; fill: #FFFFFF; }
+    .subtitle { font-weight: 500; font-size: 14px; fill: #A1A1A6; }
+    .desc { font-weight: 400; font-size: 14px; fill: #D1D1D6; }
+    .badge-text { font-weight: 600; font-size: 12px; fill: #FFFFFF; }
+    .red-text { fill: #FF0000; }
+</style>
+<rect width="580" height="220" rx="20" fill="#1C1C1E"/>
+
+<text x="30" y="50" class="desc" font-size="18px" font-style="italic">"Software Engineering undergraduate specializing</text>
+<text x="30" y="80" class="desc" font-size="18px" font-style="italic">in Artificial Intelligence &amp; Machine Learning with</text>
+<text x="30" y="110" class="desc" font-size="18px" font-style="italic">hands-on experience developing full-stack web</text>
+<text x="30" y="140" class="desc" font-size="18px" font-style="italic">applications, AI-powered solutions, and</text>
+<text x="30" y="170" class="desc" font-size="18px" font-style="italic">computer vision systems."</text>
+
+</svg>
