@@ -11,6 +11,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+  <!-- Homepage Wipe Preloader -->
+  <div class="hp-preloader" id="hpPreloader">
+      <div class="hp-preloader-bg" id="hpPreloaderBg"></div>
+      <div class="hp-wipe-container" id="hpWipeContainer">
+          <div class="hp-wipe-panel"></div>
+          <div class="hp-wipe-panel"></div>
+          <div class="hp-wipe-panel"></div>
+          <div class="hp-wipe-panel"></div>
+      </div>
+      <div class="hp-preloader-text" id="hpPreloaderText">GOVARDHAN</div>
+  </div>
+
+  <!-- TOP BLUR OVERLAY -->
+  <div class="top-blur-overlay"></div>
 
   <!-- Premium animated gradient background -->
   <div class="glow-container">
@@ -20,10 +34,10 @@
   </div>
 
   <!-- TOP NAV BAR -->
-  <div class="top-nav">
-    <h1 class="nav-title">Welcome Here, I am</h1>
-    <div class="theme-toggle-wrapper">
-      <span class="theme-label">Rainbow Flow</span>
+  <div class="top-nav" style="width: 100%; max-width: 1000px; display: flex; justify-content: space-between; align-items: center; padding: 0 10px 20px 10px; z-index: 10; position: relative;">
+    <h1 class="top-nav-title">Welcome Here, I am</h1>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 14px; font-weight: 500; color: #aaaaaa;">Rainbow Flow</span>
       <label class="theme-switch">
         <input type="checkbox" id="gradientToggle">
         <span class="slider round"></span>

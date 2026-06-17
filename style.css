@@ -171,10 +171,9 @@ body {
   border-radius: 24px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease-out, box-shadow 0.4s ease, border-color 0.4s ease;
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s forwards;
+  transform: translateY(60px);
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -204,29 +203,7 @@ body {
   opacity: 1;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Staggered animation */
-.bento-box:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.bento-box:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.column:nth-child(3) .bento-box:nth-child(1) {
-  animation-delay: 0.3s;
-}
-
-.column:nth-child(3) .bento-box:nth-child(2) {
-  animation-delay: 0.4s;
-}
+/* Animations handled dynamically via scroll reveal observer */
 
 .column:nth-child(3) .bento-box:nth-child(3) {
   animation-delay: 0.5s;
@@ -875,20 +852,23 @@ body.rainbow-mode .orb-3 {
   }
 }
 
-/* Top Nav Bar styling */
-.top-nav {
+/* Top Edge Blur Overlay */
+.top-blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1000px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px 20px 10px;
-  z-index: 10;
-  position: relative;
+  height: 80px;
+  z-index: 5;
+  pointer-events: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
 }
 
-.nav-title {
-  font-size: clamp(16px, 5vw, 24px);
+.top-nav-title {
+  font-size: 24px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.5px;
@@ -896,32 +876,74 @@ body.rainbow-mode .orb-3 {
   white-space: nowrap;
 }
 
-.theme-toggle-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+@media (max-width: 450px) {
+  .top-nav-title {
+    font-size: 18px;
+    white-space: normal;
+  }
 }
 
-.theme-label {
-  font-size: clamp(11px, 3.5vw, 14px);
-  font-weight: 500;
-  color: #aaaaaa;
-  white-space: nowrap;
+/* Scroll Reveal Animation Trigger */
+.bento-box.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@media (max-width: 400px) {
-  .theme-toggle-wrapper {
-    gap: 8px;
-  }
-  .theme-switch {
-    width: 40px;
-    height: 22px;
-  }
-  .slider:before {
-    height: 16px;
-    width: 16px;
-  }
-  input:checked + .slider:before {
-    transform: translateX(18px);
-  }
+/* ==========================================================================
+   Homepage Wipe Preloader
+   ========================================================================== */
+.hp-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20000;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hp-preloader-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050505;
+    z-index: 19999;
+}
+.hp-preloader-text {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #0b0b0b;
+    z-index: 20001;
+    opacity: 0;
+    text-transform: uppercase;
+    transform: scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.hp-preloader-text.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+.hp-wipe-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 20000;
+}
+.hp-wipe-panel {
+    flex: 1;
+    height: 100%;
+    background-color: #ff1a1a;
+    transform: translateY(100%);
+    will-change: transform;
+    box-shadow: 1px 0 0 #ff1a1a, -1px 0 0 #ff1a1a;
 }
