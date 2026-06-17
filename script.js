@@ -38,4 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 150);
         });
     }
+
+    // Gradient Toggle Logic
+    const toggle = document.getElementById('gradientToggle');
+    if (toggle) {
+        toggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                document.body.classList.add('rainbow-mode');
+            } else {
+                document.body.classList.remove('rainbow-mode');
+            }
+        });
+    }
 });
