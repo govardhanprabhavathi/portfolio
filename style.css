@@ -846,11 +846,7 @@ body.rainbow-mode .orb-3 {
   flex: 1;
 }
 
-@media (max-width: 850px) {
-  .see-more-actions {
-    flex-direction: row !important;
-  }
-}
+
 
 /* Top Edge Blur Overlay */
 .top-blur-overlay {
@@ -946,4 +942,92 @@ body.rainbow-mode .orb-3 {
     transform: translateY(100%);
     will-change: transform;
     box-shadow: 1px 0 0 #ff1a1a, -1px 0 0 #ff1a1a;
+}
+
+/* See More Box styling */
+.see-more-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.see-more-icon {
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.see-more-header {
+    justify-content: center;
+    margin-bottom: 2px;
+}
+
+.see-more-box h2 {
+    font-size: 20px;
+}
+
+.see-more-subtitle {
+    border-bottom: none;
+    padding-bottom: 12px;
+    margin-bottom: 0;
+}
+
+.see-more-actions {
+    border-top: none !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.see-more-actions .github-btn {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.see-more-actions .github-btn i {
+    color: #000000;
+}
+
+.see-more-actions .linkedin-btn {
+    background-color: #0077b5;
+    color: #ffffff;
+    border-color: #0077b5;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.see-more-actions .linkedin-btn i {
+    color: #ffffff;
+}
+
+@media (max-width: 850px) {
+    .see-more-box {
+        padding: 15px;
+    }
+    
+    .see-more-icon {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+    
+    .see-more-box h2 {
+        font-size: 14px;
+    }
+    
+    .see-more-subtitle {
+        font-size: 10px !important;
+        padding-bottom: 6px !important;
+    }
+    
+    .see-more-actions {
+        gap: 6px;
+    }
 }
