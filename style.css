@@ -802,35 +802,51 @@ input:checked+.slider:before {
 
 /* Rainbow Mode Overrides */
 body.rainbow-mode .glow-orb {
-  animation: waveFlow 25s infinite alternate ease-in-out, rainbowShift 10s infinite linear;
+  animation: waveFlow 25s infinite alternate ease-in-out, rainbowShift 15s infinite linear;
 }
 
 body.rainbow-mode .orb-1 {
-  background: #ff0055;
-  animation-duration: 25s, 7s;
+  background-color: #0055ff;
+  animation-duration: 25s, 15s;
+  animation-delay: 0s, 0s;
 }
 
 body.rainbow-mode .orb-2 {
-  background: #0044ff;
-  animation-duration: 20s, 9s;
+  background-color: #00ff44;
+  animation-duration: 20s, 15s;
+  animation-delay: -5s, -10s;
 }
 
 body.rainbow-mode .orb-3 {
-  background: #00ffaa;
-  animation-duration: 30s, 11s;
+  background-color: #ffff00;
+  animation-duration: 30s, 15s;
+  animation-delay: -15s, -5s;
 }
 
 @keyframes rainbowShift {
   0% {
-    filter: blur(100px) hue-rotate(0deg);
+    background-color: #0055ff;
+    filter: blur(100px);
   }
-
-  50% {
-    filter: blur(100px) hue-rotate(180deg);
+  20% {
+    background-color: #00ff44;
+    filter: blur(100px);
   }
-
+  40% {
+    background-color: #ffff00;
+    filter: blur(100px);
+  }
+  60% {
+    background-color: #ff6600;
+    filter: blur(100px);
+  }
+  80% {
+    background-color: #ff00aa;
+    filter: blur(100px);
+  }
   100% {
-    filter: blur(100px) hue-rotate(360deg);
+    background-color: #0055ff;
+    filter: blur(100px);
   }
 }
 
